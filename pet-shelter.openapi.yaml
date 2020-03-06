@@ -75,7 +75,7 @@ components:
       type: object
       properties:
         id:
-          type: string
+          type: number
           readOnly: true
         name:
           type: string

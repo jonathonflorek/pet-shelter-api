@@ -7,6 +7,9 @@
   "scripts": {
     "start": "npm run build && env-cmd node dist/index.js",
     "build": "rimraf dist && tsc -p tsconfig.build.json",
+    "migration:revert": "npm run build && typeorm migration:revert",
+    "migration:generate": "npm run migration:run && typeorm migration:generate -n",
+    "migration:run": "npm run build && typeorm migration:run",
     "test": "env-cmd -f test.env mocha \"test/integration/**/*.test.ts\""
   },
   "keywords": [],
