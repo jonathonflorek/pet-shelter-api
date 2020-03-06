@@ -5,6 +5,18 @@ info:
 servers:
   - url: http://localhost:3000
 paths:
+  /health:
+    get:
+      responses:
+        200:
+          description: OK
+            content:
+              application/json:
+                schema:
+                  type: object
+                    properties:
+                      status:
+                        enum: [OK]
   /pets:
     get:
       responses:
@@ -30,7 +42,7 @@ paths:
                 pet:
                   $ref: '#/components/schemas/Pet'
       responses:
-        204:
+        201:
           description: Created
           content:
             application/json:
