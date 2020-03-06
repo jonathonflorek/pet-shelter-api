@@ -16,9 +16,9 @@ export class PetEntity {
     @Column()
     public breed: string = any;
 
-    @Column()
+    @Column('decimal')
     public latitude: number = any;
 
-    @Column()
+    @Column('decimal')
     public longitude: number = any;
 }
