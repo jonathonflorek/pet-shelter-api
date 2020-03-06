@@ -1,0 +1,77 @@
+openapi: 3.0.0
+info:
+  title: Pet Shelter API
+  version: 0.0.0-alpha0
+servers:
+  - url: http://localhost:3000
+paths:
+  /pets:
+    get:
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  pets:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Pet'
+    post:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                pet:
+                  $ref: '#/components/schemas/Pet'
+      responses:
+        204:
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  pet:
+                    $ref: '#/components/schemas/Pet'
+  /pets/{petid}:
+    parameters:
+      - name: petid
+        in: path
+        schema:
+          type: string
+        required: true
+    get:
+      responses:
+        200:
+          description: Ok
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  pet:
+                    $ref: '#/components/schemas/Pet'
+components:
+  schemas:
+    Pet:
+      type: object
+      properties:
+        id:
+          type: string
+          readOnly: true
+        name:
+          type: string
+        type:
+          type: string
+        breed:
+          type: string
+        latitude:
+          type: number
+        longitude:
+          type: number
