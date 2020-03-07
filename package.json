@@ -10,7 +10,8 @@
     "migration:revert": "npm run build && typeorm migration:revert",
     "migration:generate": "npm run migration:run && typeorm migration:generate -n",
     "migration:run": "npm run build && typeorm migration:run",
-    "test": "env-cmd -f test.env mocha \"test/integration/**/*.test.ts\""
+    "test": "npm run build && npm run test:integration",
+    "test:integration": "env-cmd -f test.env mocha \"test/integration/**/*.test.ts\""
   },
   "keywords": [],
   "author": "Jonathon Florek",
