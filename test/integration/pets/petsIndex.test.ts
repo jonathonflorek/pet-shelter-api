@@ -3,7 +3,7 @@ import chaiHttp = require('chai-http');
 import { getRepository } from 'typeorm';
 import { PetEntity } from '../../../src/models/PetEntity'
 import { app } from '../../../src';
-import { OK, NOT_FOUND } from 'http-status-codes';
+import { OK } from 'http-status-codes';
 
 chai.use(chaiHttp);
 const { expect } = chai;
