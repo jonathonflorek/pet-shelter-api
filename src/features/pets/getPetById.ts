@@ -8,6 +8,6 @@ export async function getPetById(req: express.Request, res: express.Response) {
     if (pet) {
         res.status(200).json({ pet });
     } else {
-        res.status(404);
+        res.status(404).send();
     }
 }
