@@ -5,8 +5,8 @@
   "description": "Implementation of the Pet Shelter Api for the Pet Weather Programming Take Home Challenge.",
   "main": "dist/index.js",
   "scripts": {
-    "start": "node dist/index.js",
     "start:dev": "npm run build && env-cmd npm start",
+    "start": "node dist/index.js",
     "build": "rimraf dist && tsc -p tsconfig.build.json",
     "migration:revert": "npm run build && typeorm migration:revert",
     "migration:generate": "npm run migration:run && typeorm migration:generate -n",
