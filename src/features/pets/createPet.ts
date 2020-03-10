@@ -14,9 +14,9 @@ const petCreation = t.strict({
         location: t.strict({
             type: t.literal('Point'),
             coordinates: t.tuple([t.number, t.number]),
-        }),
-    }),
-});
+        }, 'Point'),
+    }, 'Pet'),
+}, 'PetPost');
 
 export async function createPet(req: express.Request, res: express.Response) {
     const petCreate = petCreation.decode(req.body);
