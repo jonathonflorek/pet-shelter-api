@@ -3,20 +3,20 @@ info:
   title: Pet Shelter API
   version: 0.0.0-alpha0
 servers:
-  - url: http://localhost:3000
+  - url: http://localhost:8080
 paths:
   /health:
     get:
       responses:
         200:
           description: OK
-            content:
-              application/json:
-                schema:
-                  type: object
-                    properties:
-                      status:
-                        enum: [OK]
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    enum: [OK]
   /pets:
     get:
       responses:
@@ -42,6 +42,15 @@ paths:
                 pet:
                   $ref: '#/components/schemas/Pet'
       responses:
+        422:
+          description: Unprocessable Entity
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: string
         409:
           description: Name and Breed are not unique
         201:
