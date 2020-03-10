@@ -1,6 +1,6 @@
 import * as express from 'express';
 import { getRepository, QueryFailedError } from 'typeorm';
-import { PetEntity } from '../../models/PetEntity';
+import { PetEntity } from '../models/PetEntity';
 
 import * as t from 'io-ts';
 import { either } from 'fp-ts';
@@ -43,4 +43,20 @@ export async function createPet(req: express.Request, res: express.Response) {
             throw ex;
         }
     }
+}
+
+export async function getPetById(req: express.Request, res: express.Response) {
+    const repository = getRepository(PetEntity);
+    const pet = await repository.findOne(req.params.petid);
+    if (pet) {
+        res.status(200).json({ pet });
+    } else {
+        res.status(404).send();
+    }
+}
+
+export async function getAllPets(_: express.Request, res: express.Response) {
+    const repository = getRepository(PetEntity);
+    const pets = await repository.find();
+    res.status(200).json({ pets });
 }
