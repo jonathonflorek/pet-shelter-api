@@ -6,6 +6,8 @@ An API spec is defined at `pet-shelter.openapi.yaml`.
 
 Express + TypeORM + Postgres
 
+If you want to play with the API, copy-paste the contents of `pet-shelter.openapi.yaml` into the [Swagger Editor](https://editor.swagger.io/). An instance of the API is available here: https://immense-sands-23244.herokuapp.com/
+
 ## How to develop
 
 When running locally, the server is launched with environment variables provided in the `/.env` file. A sample is provided in `/examples`. Tests are run with environment variables in `/test.env` - make sure these point to different databases or the test runner will truncate your debugging database.
