@@ -6,7 +6,7 @@ An API spec is defined at `pet-shelter.openapi.yaml`.
 
 Express + TypeORM + Postgres
 
-If you want to play with the API, copy-paste the contents of `pet-shelter.openapi.yaml` into the [Swagger Editor](https://editor.swagger.io/). An instance of the API is available here: https://immense-sands-23244.herokuapp.com/
+If you want to play with the API, copy-paste the contents of `pet-shelter.openapi.yaml` into the [Swagger Editor](https://editor.swagger.io/) (or import this link: `https://raw.githubusercontent.com/jonathonflorek/pet-shelter-api/master/pet-shelter.openapi.yaml`). An instance of the API is available here: https://immense-sands-23244.herokuapp.com/
 
 ## How to develop
 
