@@ -51,7 +51,9 @@ paths:
                 type: object
                 properties:
                   errors:
-                    type: string
+                    type: array
+                    items:
+                      type: string
         409:
           description: Name and Breed are not unique
         201:
